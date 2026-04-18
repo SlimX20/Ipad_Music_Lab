@@ -18,3 +18,4 @@ Original file line number	Diff line number	Diff line change
 @@ -1 +1 @@
 { "extends": "./tsconfig.base.json", "compileOnSave": false, "files": [], "references": [ { "path": "./lib/db" }, { "path": "./lib/api-client-react" }, { "path": "./lib/api-zod" } ] }
 { "extends": "./tsconfig.base.json", "compileOnSave": false, "files": [], "references": [ { "path": "./lib/db" }, { "path": "./lib/api-client-react" }, { "path": "./lib/api-zod" } ] }
+README.md
