@@ -1,20 +1,23 @@
-File tree
+# 🎛️ iPad Music Lab
 
-README.md
-1 file changed
-+1
--1
-lines changed
+A lightweight browser-based generative music tool built for iPad workflow and live groove creation.
 
- 
-‎README.md‎
-+1
--1
-Lines changed: 1 addition & 1 deletion
+## 🎧 What it does
 
+- Drum and melody generation
 
-Original file line number	Diff line number	Diff line change
-@@ -1 +1 @@
-{ "extends": "./tsconfig.base.json", "compileOnSave": false, "files": [], "references": [ { "path": "./lib/db" }, { "path": "./lib/api-client-react" }, { "path": "./lib/api-zod" } ] }
-{ "extends": "./tsconfig.base.json", "compileOnSave": false, "files": [], "references": [ { "path": "./lib/db" }, { "path": "./lib/api-client-react" }, { "path": "./lib/api-zod" } ] }
-README.md
+- Web Audio step sequencing
+
+- Experimental groove engine for live jamming
+
+## 🚀 Purpose
+
+Designed for fast music ideas, sampling, and performance on iPad using tools like Koala and AUM.
+
+## 🔥 Status
+
+Frontend prototype — no backend, fully browser-based audio engine.
+
+## 💡 Vision
+
+Turn the browser into a playable music instrument.
