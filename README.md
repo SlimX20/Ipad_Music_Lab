@@ -1,23 +1,43 @@
 # 🎛️ iPad Music Lab
 
-A lightweight browser-based generative music tool built for iPad workflow and live groove creation.
+A lightweight browser-based generative music instrument built for iPad workflow, sampling, and live groove creation.
 
 ## 🎧 What it does
 
-- Drum and melody generation
+- Drum sequencer (kick, snare, hats)
 
-- Web Audio step sequencing
+- Melody generator using Web Audio API
 
-- Experimental groove engine for live jamming
+- Live step-based groove playback
+
+- Randomized variation for evolving patterns
 
 ## 🚀 Purpose
 
-Designed for fast music ideas, sampling, and performance on iPad using tools like Koala and AUM.
+This project is designed as a simple music tool for sketching ideas quickly on iPad using the browser, and integrating with apps like Koala and AUM.
+
+## 🔊 How it works
+
+- Runs directly in the browser (no installation)
+
+- Uses Web Audio API for sound generation
+
+- Step sequencer triggers drums + melody in real time
+
+## 🎛️ Current features
+
+- 16-step timing engine
+
+- Basic drum synthesis (kick, snare, hat noise)
+
+- Simple melodic scale generator
+
+- Start / Stop playback control
 
 ## 🔥 Status
 
-Frontend prototype — no backend, fully browser-based audio engine.
+Frontend-only prototype. No backend, no database, fully client-side audio engine.
 
 ## 💡 Vision
 
-Turn the browser into a playable music instrument.
+Turn the browser into a playable, expressive music instrument
