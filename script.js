@@ -1,4 +1,4 @@
-let swing = 0.15; // 0 = rak, 0.2 = tydlig swing
+let swing = 0.15;
 
 let audioCtx;
 
