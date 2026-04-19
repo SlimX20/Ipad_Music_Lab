@@ -1,3 +1,5 @@
-alert("SCRIPT LADDAR");
+window.onload = function () {
 
-console.log("JS FUNKAR");
+  alert("SCRIPT FUNKAR NU");
+
+};
