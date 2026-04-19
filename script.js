@@ -138,3 +138,44 @@ interval = setInterval(() => {
   step = (step + 1) % 16;
 
 }, 130);
+function createGrid() {
+
+  const grid = document.getElementById("grid");
+
+  for (let i = 0; i < 16; i++) {
+
+    const col = document.createElement("div");
+
+    col.style.display = "inline-block";
+
+    col.style.margin = "4px";
+
+    const k = document.createElement("button");
+
+    const s = document.createElement("button");
+
+    const h = document.createElement("button");
+
+    k.innerText = "K";
+
+    s.innerText = "S";
+
+    h.innerText = "H";
+
+    k.onclick = () => kick[i] = kick[i] ? 0 : 1;
+
+    s.onclick = () => snare[i] = snare[i] ? 0 : 1;
+
+    h.onclick = () => hat[i] = hat[i] ? 0 : 1;
+
+    col.appendChild(k);
+
+    col.appendChild(s);
+
+    col.appendChild(h);
+
+    grid.appendChild(col);
+
+  }
+
+}
