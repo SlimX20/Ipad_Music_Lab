@@ -138,21 +138,21 @@ function createGrid() {
 
     };
 
-    h.onclick = () => {
+ h.onclick = () => {
 
-      hat[i] = hat[i] ? 0 : 1;
+  hat[i] = hat[i] ? 0 : 1;
 
-      createGrid();
+  createGrid();
 
-    };
+};
 
-    col.appendChild(k);
+col.appendChild(k);
 
-    col.appendChild(s);
+col.appendChild(s);
 
-    col.appendChild(h);
+col.appendChild(h);
 
-    grid.appendChild(col);
+grid.appendChild(col);
 
   }
 
