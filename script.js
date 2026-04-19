@@ -4,21 +4,15 @@ let interval;
 
 let step = 0;
 
-let swing = 0.62;
+// STEP DATA
 
-// 16-step patterns
-
-const kick =  Array(16).fill(0);
+const kick = Array(16).fill(0);
 
 const snare = Array(16).fill(0);
 
-const hat =   Array(16).fill(0);
+const hat = Array(16).fill(0);
 
-// -------------------------
-
-// AUDIO ENGINE
-
-// -------------------------
+// ---------------- AUDIO ----------------
 
 function playTone(freq, time, duration) {
 
@@ -74,35 +68,23 @@ function noise(time, length, volume) {
 
 }
 
-// -------------------------
-
-// STEP SEQUENCER
-
-// -------------------------
+// ---------------- START ----------------
 
 function start() {
 
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-  createGrid(); // 👈 bygger UI när du startar
+  createGrid(); // viktigt
 
   interval = setInterval(() => {
 
     const now = audioCtx.currentTime;
 
-    const isOffBeat = step % 2 === 1;
+    if (kick[step]) playTone(60, now, 0.15);
 
-    const delay = isOffBeat ? swing * 0.05 : 0;
+    if (snare[step]) noise(now, 0.2, 0.4);
 
-    const t = now + delay;
-
-    // drums
-
-    if (kick[step]) playTone(60, t, 0.15);
-
-    if (snare[step]) noise(t, 0.2, 0.4);
-
-    if (hat[step]) noise(t, 0.05, 0.12);
+    if (hat[step]) noise(now, 0.05, 0.1);
 
     step = (step + 1) % 16;
 
@@ -116,23 +98,11 @@ function stop() {
 
 }
 
-// -------------------------
-
-// STEP GRID UI
-
-// -------------------------
+// ---------------- GRID ----------------
 
 function createGrid() {
 
   const grid = document.getElementById("grid");
-
-  if (!grid) {
-
-    console.log("GRID FINNS INTE I HTML");
-
-    return;
-
-  }
 
   grid.innerHTML = "";
 
@@ -140,27 +110,23 @@ function createGrid() {
 
     const col = document.createElement("div");
 
-    col.style.display = "inline-block";
-
-    col.style.margin = "4px";
-
     const k = document.createElement("button");
 
     const s = document.createElement("button");
 
     const h = document.createElement("button");
 
-    k.innerText = "K";
+    k.innerText = kick[i] ? "K1" : "K";
 
-    s.innerText = "S";
+    s.innerText = snare[i] ? "S1" : "S";
 
-    h.innerText = "H";
+    h.innerText = hat[i] ? "H1" : "H";
 
     k.onclick = () => {
 
       kick[i] = kick[i] ? 0 : 1;
 
-      console.log("kick", i, kick[i]);
+      createGrid();
 
     };
 
@@ -168,7 +134,7 @@ function createGrid() {
 
       snare[i] = snare[i] ? 0 : 1;
 
-      console.log("snare", i, snare[i]);
+      createGrid();
 
     };
 
@@ -176,7 +142,7 @@ function createGrid() {
 
       hat[i] = hat[i] ? 0 : 1;
 
-      console.log("hat", i, hat[i]);
+      createGrid();
 
     };
 
@@ -189,7 +155,5 @@ function createGrid() {
     grid.appendChild(col);
 
   }
-
-  console.log("GRID SKAPAD");
 
 }
