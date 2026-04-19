@@ -84,7 +84,11 @@ function start() {
 
   interval = setInterval(() => {
 
-    const now = audioCtx.currentTime;
+    const isOffBeat = step % 2 === 1;
+
+const delay = isOffBeat ? swing : 0;
+
+const now = audioCtx.currentTime + delay;
 
     if (kick[step]) playTone(60, now, 0.15);
 
