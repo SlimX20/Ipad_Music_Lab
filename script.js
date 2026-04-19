@@ -90,7 +90,7 @@ const isOffBeat = step % 2 === 1;
 
 const swingOffset = isOffBeat ? swing : 0;
 
-const scheduledTime = now + swingOffset; + delay;
+const scheduledTime = now + swingOffset;
 
     if (kick[step]) playTone(60, scheduledTime, 0.15);
 
