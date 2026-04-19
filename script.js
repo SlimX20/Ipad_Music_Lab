@@ -71,7 +71,7 @@ function noise(time, length, volume) {
 // ---------------- START ----------------
 
 function start() {
-
+step = 0;
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   createGrid(); // viktigt
