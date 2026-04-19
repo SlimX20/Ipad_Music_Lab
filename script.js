@@ -92,11 +92,11 @@ const swingOffset = isOffBeat ? swing : 0;
 
 const scheduledTime = now + swingOffset; + delay;
 
-    if (kick[step]) playTone(60, now, 0.15);
+    if (kick[step]) playTone(60, scheduledTime, 0.15);
 
-    if (snare[step]) noise(now, 0.2, 0.4);
+if (snare[step]) noise(scheduledTime, 0.2, 0.4);
 
-    if (hat[step]) noise(now, 0.05, 0.1);
+if (hat[step]) noise(scheduledTime, 0.05, 0.1);
 
     step = (step + 1) % 16;
 
