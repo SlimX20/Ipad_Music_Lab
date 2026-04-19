@@ -91,6 +91,7 @@ function start() {
       playTone(note, now, 0.1);
 
     }
+    
 
     step = (step + 1) % 16;
 
@@ -103,3 +104,32 @@ function stop() {
   clearInterval(interval);
 
 }
+interval = setInterval(() => {
+
+  const now = audioCtx.currentTime;
+
+  const isOffBeat = step % 2 === 1;
+
+  const delay = isOffBeat ? swing * 0.05 : 0;
+
+  const t = now + delay;
+
+  if (kick[step]) playTone(60, t, 0.15);
+
+  if (snare[step]) noise(t, 0.2, 0.4);
+
+  if (hat[step]) noise(t, 0.05, 0.12);
+
+  // mer musikalisk melody (mindre random)
+
+  if (Math.random() > 0.6) {
+
+    const note = scale[Math.floor(Math.random() * scale.length)];
+
+    playTone(note, t, 0.12);
+
+  }
+
+  step = (step + 1) % 16;
+
+}, 130);
