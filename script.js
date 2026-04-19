@@ -1,3 +1,7 @@
+let swing = 0.62; // 0.5 = rak, 0.6–0.7 = hiphop feel
+
+let step = 0;
+
 let audioCtx;
 
 let interval;
