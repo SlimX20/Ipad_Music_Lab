@@ -4,8 +4,6 @@ let interval;
 
 let step = 0;
 
-// STEP DATA
-
 const kick = Array(16).fill(0);
 
 const snare = Array(16).fill(0);
@@ -68,38 +66,17 @@ function noise(time, length, volume) {
 
 }
 
-// ---------------- START ----------------
+// ---------------- START / STOP ----------------
 
 function start() {
-  function start() {
 
-  if (interval) clearInterval(interval); // stoppar gamla loops
+  if (interval) clearInterval(interval);
+
+  step = 0;
 
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-  step = 0; // RESET
 
   createGrid();
-
-  interval = setInterval(() => {
-
-    const now = audioCtx.currentTime;
-
-    if (kick[step]) playTone(60, now, 0.15);
-
-    if (snare[step]) noise(now, 0.2, 0.4);
-
-    if (hat[step]) noise(now, 0.05, 0.1);
-
-    step = (step + 1) % 16;
-
-  }, 130);
-
-}
-step = 0;
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-  createGrid(); // viktigt
 
   interval = setInterval(() => {
 
@@ -163,21 +140,21 @@ function createGrid() {
 
     };
 
- h.onclick = () => {
+    h.onclick = () => {
 
-  hat[i] = hat[i] ? 0 : 1;
+      hat[i] = hat[i] ? 0 : 1;
 
-  createGrid();
+      createGrid();
 
-};
+    };
 
-col.appendChild(k);
+    col.appendChild(k);
 
-col.appendChild(s);
+    col.appendChild(s);
 
-col.appendChild(h);
+    col.appendChild(h);
 
-grid.appendChild(col);
+    grid.appendChild(col);
 
   }
 
