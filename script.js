@@ -1,3 +1,4 @@
+alert("SCRIPT FUNKAR");
 let audioCtx;
 
 let interval;
