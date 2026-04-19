@@ -69,6 +69,11 @@ function noise(time, length, volume) {
   src.stop(time + length);
 
 }
+const kick =  Array(16).fill(0);
+
+const snare = Array(16).fill(0);
+
+const hat =   Array(16).fill(0);
 
 function start() {
 
