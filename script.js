@@ -71,6 +71,31 @@ function noise(time, length, volume) {
 // ---------------- START ----------------
 
 function start() {
+  function start() {
+
+  if (interval) clearInterval(interval); // stoppar gamla loops
+
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  step = 0; // RESET
+
+  createGrid();
+
+  interval = setInterval(() => {
+
+    const now = audioCtx.currentTime;
+
+    if (kick[step]) playTone(60, now, 0.15);
+
+    if (snare[step]) noise(now, 0.2, 0.4);
+
+    if (hat[step]) noise(now, 0.05, 0.1);
+
+    step = (step + 1) % 16;
+
+  }, 130);
+
+}
 step = 0;
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
