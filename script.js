@@ -78,6 +78,7 @@ const hat =   Array(16).fill(0);
 function start() {
 
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  createGrid();
 
   interval = setInterval(() => {
 
